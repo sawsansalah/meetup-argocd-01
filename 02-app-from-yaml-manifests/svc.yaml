@@ -4,10 +4,11 @@ kind: Service
 metadata:
   name: sample-service
 spec:
+  type: NodePort 
   selector: # <-- mapped to labels of Pods
     app: sample
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80  # <--- mapped to containerPort of Pod
-      type: NodePort
+      
